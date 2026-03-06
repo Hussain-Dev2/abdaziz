@@ -1111,6 +1111,19 @@ span.accent-dot {
         font-size: clamp(2.5rem, 8vw, 3.5rem);
     }
     
+    .hero {
+        height: auto;
+        min-height: 50vh;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    
+    .hero-image {
+        object-fit: contain;
+        transform: scale(1);
+        animation: none;
+    }
+    
     .stats-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -1140,6 +1153,19 @@ span.accent-dot {
         gap: 30px;
     }
     
+    
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-image {
+        object-fit: cover;
+    }
+    
+    .hero-bg {
+        background: #010203;
+    }
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
