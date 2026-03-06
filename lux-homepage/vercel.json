@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "name": "abaaziz-lux-homepage",
+    "routes": [
+      { "src": "/(.*)", "dest": "/main.html" }
+    ]
+  }
