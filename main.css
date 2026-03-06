@@ -1083,9 +1083,13 @@ span.accent-dot {
     }
     
     .experience-badge {
-        right: 20px; /* Swapped left to right for RTL */
+        right: 10px; /* Swapped left to right for RTL */
         left: auto;
         bottom: -20px;
+    }
+    
+    .image-accent-border {
+        right: 20px;
     }
     
     .footer-grid {
@@ -1137,5 +1141,22 @@ span.accent-dot {
     
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .gallery-item:nth-child(n) {
+        grid-column: span 1;
+    }
+    
+    .whatsapp-btn {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .experience-badge {
+        padding: 20px 25px;
+    }
+    
+    .experience-badge .years {
+        font-size: 2.2rem;
     }
 }
