@@ -507,8 +507,13 @@ span.accent-dot {
 
 .about-image-wrapper {
     position: relative;
+}
+
+.floating-wrapper {
+    position: relative;
     padding-bottom: 40px;
     padding-left: 40px; /* Changed from right for RTL */
+    animation: floatTransform 6s ease-in-out infinite;
 }
 
 .about-img {
@@ -517,7 +522,9 @@ span.accent-dot {
     position: relative;
     z-index: 2;
     aspect-ratio: 4 / 3;
-    animation: floatingImage 6s ease-in-out infinite;
+    animation: floatShadow 6s ease-in-out infinite;
+    width: 100%;
+    object-fit: cover;
 }
 
 .image-accent-border {
@@ -989,19 +996,14 @@ span.accent-dot {
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-@keyframes floatingImage {
-    0% { 
-        transform: translateY(0); 
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-    50% { 
-        transform: translateY(-15px); 
-        box-shadow: 0 35px 55px rgba(0, 0, 0, 0.5);
-    }
-    100% { 
-        transform: translateY(0); 
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
+@keyframes floatTransform {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes floatShadow {
+    0%, 100% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+    50% { box-shadow: 0 35px 55px rgba(0, 0, 0, 0.5); }
 }
 
 /* Scroll Reveals */
@@ -1067,8 +1069,17 @@ span.accent-dot {
     
     .about-image-wrapper {
         order: -1; /* Image first on mobile */
+    }
+    
+    .floating-wrapper {
         padding-left: 20px; /* Adjusting for RTL */
         padding-right: 0;
+        animation: none;
+    }
+    
+    .about-img {
+        animation: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
     
     .experience-badge {
