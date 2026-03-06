@@ -15,8 +15,8 @@
     --text-muted: #475569;   /* Muted gray */
 
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Outfit', sans-serif;
+    --font-heading: 'Tajawal', serif;
+    --font-body: 'Cairo', sans-serif;
 
     /* Styling */
     --radius-sm: 4px;
@@ -493,8 +493,8 @@ span.accent-dot {
     color: var(--accent-light);
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    letter-spacing: 0px;
+    font-size: 0.95rem;
 }
 
 .link-arrow .arrow {
@@ -502,13 +502,13 @@ span.accent-dot {
 }
 
 .link-arrow:hover .arrow {
-    transform: translateX(5px);
+    transform: translateX(-5px); /* Changed to minus for RTL */
 }
 
 .about-image-wrapper {
     position: relative;
     padding-bottom: 40px;
-    padding-right: 40px;
+    padding-left: 40px; /* Changed from right for RTL */
 }
 
 .about-img {
@@ -516,13 +516,14 @@ span.accent-dot {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 2;
+    aspect-ratio: 4 / 3;
 }
 
 .image-accent-border {
     position: absolute;
     top: 40px;
-    left: 40px;
-    right: 0;
+    right: 40px; /* Swapped left to right for RTL */
+    left: 0;
     bottom: 0;
     border: 1px solid var(--accent-gold);
     z-index: 1;
@@ -532,12 +533,13 @@ span.accent-dot {
 .experience-badge {
     position: absolute;
     bottom: 0;
-    left: -40px;
+    right: -40px; /* Swapped left to right for RTL */
     background: var(--bg-surface);
     padding: 30px 40px;
-    border-left: 3px solid var(--accent-gold);
+    border-right: 3px solid var(--accent-gold); /* Swapped border-left to border-right for RTL */
     z-index: 3;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .experience-badge .years {
@@ -771,12 +773,12 @@ span.accent-dot {
 
 .method-item {
     position: relative;
-    padding-left: 20px;
+    padding-right: 20px; /* Swiped left to right for RTL */
 }
 .method-item::before {
     content: '';
     position: absolute;
-    left: 0;
+    right: 0; /* Swiped left to right for RTL */
     top: 5px;
     width: 2px;
     height: calc(100% - 10px);
@@ -786,70 +788,39 @@ span.accent-dot {
 .method-title {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.85rem;
+    font-size: 0.95rem; /* Slightly larger for Arabic */
     color: var(--text-muted);
     font-weight: 500;
     margin-bottom: 5px;
     display: block;
 }
 
-.contact-form {
-    background-color: var(--bg-surface);
-    padding: 50px 40px;
+/* --- WhatsApp Buttons --- */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #25D366;
+    color: white;
+    padding: 18px 32px;
     border-radius: var(--radius-sm);
-    border: 1px solid rgba(255,255,255,0.05);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
-.form-group {
-    margin-bottom: 24px;
-    position: relative;
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    background-color: #1ebe57;
+    color: white;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 16px;
-    background-color: rgba(2, 4, 6, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    transition: border-color var(--transition-fast), background var(--transition-fast);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-gold);
-    background-color: rgba(2, 4, 6, 0.8);
-}
-
-.error-msg {
-    display: none;
-    color: #ef4444;
-    font-size: 0.8rem;
-    margin-top: 5px;
-    position: absolute;
-    bottom: -20px;
-}
-
-.submit-success {
-    display: none;
-    padding: 15px;
-    background-color: rgba(16, 185, 129, 0.1);
-    color: #34d399;
-    border: 1px solid #059669;
-    border-radius: var(--radius-sm);
-    text-align: center;
-    margin-top: 20px;
+.whatsapp-btn svg {
+    margin-top: -2px;
 }
 
 /* --- Footer --- */
@@ -1038,7 +1009,7 @@ span.accent-dot {
 }
 
 .scroll-reveal.fade-right {
-    transform: translateX(40px);
+    transform: translateX(-40px); /* Changed to minus for RTL layout */
 }
 
 .scroll-reveal.active {
@@ -1079,11 +1050,13 @@ span.accent-dot {
     
     .about-image-wrapper {
         order: -1; /* Image first on mobile */
-        padding-right: 20px;
+        padding-left: 20px; /* Adjusting for RTL */
+        padding-right: 0;
     }
     
     .experience-badge {
-        left: 20px;
+        right: 20px; /* Swapped left to right for RTL */
+        left: auto;
         bottom: -20px;
     }
     
