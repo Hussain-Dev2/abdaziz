@@ -517,6 +517,7 @@ span.accent-dot {
     position: relative;
     z-index: 2;
     aspect-ratio: 4 / 3;
+    animation: floatingImage 6s ease-in-out infinite;
 }
 
 .image-accent-border {
@@ -986,6 +987,21 @@ span.accent-dot {
 @keyframes spinner {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes floatingImage {
+    0% { 
+        transform: translateY(0); 
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    50% { 
+        transform: translateY(-15px); 
+        box-shadow: 0 35px 55px rgba(0, 0, 0, 0.5);
+    }
+    100% { 
+        transform: translateY(0); 
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
 }
 
 /* Scroll Reveals */
