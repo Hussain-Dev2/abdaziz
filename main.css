@@ -1109,30 +1109,36 @@ span.accent-dot {
     
     .hero {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        height: 100vh;
-        min-height: 600px;
+        height: auto;
+        min-height: auto;
+        padding-top: 100px;
         text-align: center;
     }
     
     .hero-bg {
-        /* Restoring full screen background on mobile instead of inline block */
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+        position: relative;
+        width: calc(100% - 40px);
+        margin: 0 auto 30px;
+        height: 250px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     }
     
     .hero-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center; /* Center the image properly on mobile */
+        object-position: center;
+        transform: none;
+        animation: none;
     }
 
     .hero-overlay {
-        background: linear-gradient(to bottom, rgba(2, 4, 6, 0.7) 0%, rgba(2, 4, 6, 0.9) 100%); /* Stronger gradient for text legibility on vertical screens */
+        background: linear-gradient(to top, rgba(2, 4, 6, 0.8) 0%, rgba(2, 4, 6, 0.2) 100%); 
     }
     
     .hero-content {
