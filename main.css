@@ -1125,13 +1125,22 @@ span.accent-dot {
     }
     
     .hero-image {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        object-position: center; /* Center the image properly on mobile */
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to bottom, rgba(2, 4, 6, 0.7) 0%, rgba(2, 4, 6, 0.9) 100%); /* Stronger gradient for text legibility on vertical screens */
     }
     
     .hero-content {
         padding: 0 15px;
         width: 100%;
         margin: 0 auto;
+        position: relative;
+        z-index: 2;
     }
     
     .hero-title {
