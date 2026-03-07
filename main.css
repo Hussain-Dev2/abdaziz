@@ -1112,6 +1112,22 @@ span.accent-dot {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 0;
+        background-color: rgba(6, 9, 14, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 1100;
+    }
+    
+    .navbar.scrolled {
+        padding: 12px 0;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
     .menu-links, .nav-cta.dp-none-mobile {
         display: none;
     }
