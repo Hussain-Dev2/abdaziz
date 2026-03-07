@@ -362,8 +362,8 @@ span.accent-dot {
     height: 100%;
     object-position: center;
     object-fit: cover;
-    transform: scale(1.05); /* Slight scale for potential parallax */
-    animation: slowZoomOut 10s ease-out forwards;
+    transform: scale(1.05); /* Slight scale for potential parallax and floating */
+    animation: floatHeroImage 8s ease-in-out infinite;
 }
 
 .hero-overlay {
@@ -992,6 +992,11 @@ span.accent-dot {
 @keyframes slowZoomOut {
     0% { transform: scale(1.1); }
     100% { transform: scale(1); }
+}
+
+@keyframes floatHeroImage {
+    0%, 100% { transform: scale(1.05) translateY(0); }
+    50% { transform: scale(1.08) translateY(-10px); }
 }
 
 @keyframes scrollWheel {
